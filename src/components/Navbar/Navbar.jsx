@@ -1,5 +1,14 @@
 import { useState, useEffect } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { 
+  FaBars, 
+  FaTimes, 
+  FaHome, 
+  FaUser, 
+  FaCode, 
+  FaBriefcase, 
+  FaProjectDiagram, 
+  FaEnvelope 
+} from 'react-icons/fa';
 import { useLanguage } from '../../context/LanguageContext';
 import './Navbar.css';
 
@@ -18,12 +27,12 @@ const Navbar = () => {
   }, []);
 
   const menuItems = [
-    { name: t.nav.home, href: '#hero' },
-    { name: t.nav.about, href: '#about' },
-    { name: t.nav.skills, href: '#skills' },
-    { name: t.nav.experience, href: '#experience' },
-    { name: t.nav.projects, href: '#projects' },
-    { name: t.nav.contact, href: '#contact' }
+    { name: t.nav.home, href: '#hero', icon: <FaHome /> },
+    { name: t.nav.about, href: '#about', icon: <FaUser /> },
+    { name: t.nav.skills, href: '#skills', icon: <FaCode /> },
+    { name: t.nav.experience, href: '#experience', icon: <FaBriefcase /> },
+    { name: t.nav.projects, href: '#projects', icon: <FaProjectDiagram /> },
+    { name: t.nav.contact, href: '#contact', icon: <FaEnvelope /> }
   ];
 
   const handleMenuClick = () => {
@@ -40,19 +49,20 @@ const Navbar = () => {
         <ul className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>
           {menuItems.map((item) => (
             <li key={item.name}>
-              <a 
-                href={item.href} 
+              <a
+                href={item.href}
                 className="navbar-link"
                 onClick={handleMenuClick}
               >
-                {item.name}
+                <span className="navbar-icon">{item.icon}</span>
+                <span className="navbar-text">{item.name}</span>
               </a>
             </li>
           ))}
         </ul>
 
         <div className="navbar-actions">
-          <button 
+          <button
             className="language-toggle"
             onClick={toggleLanguage}
             aria-label="Toggle language"

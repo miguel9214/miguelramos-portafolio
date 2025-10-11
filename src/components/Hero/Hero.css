@@ -97,6 +97,14 @@
   transform-origin: bottom center;
 }
 
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  40% { transform: rotate(14deg); }
+  50% { transform: rotate(0deg); }
+}
+
 /* Nombre con gradiente animado */
 .hero-name {
   font-size: 3.5rem;
@@ -112,17 +120,51 @@
   letter-spacing: -1px;
 }
 
-/* Título con efecto fluido */
+@keyframes rotateGradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ===== TÍTULO PLATEADO CROMADO ===== */
 .hero-title {
   font-size: 2rem;
-  font-weight: 600;
-  background: var(--gradient-secondary);
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+  
+  /* Plateado con más tonos */
+  background: linear-gradient(
+    135deg,
+    #707070 0%,
+    #707070 25%,
+    #c0c0c0 50%,
+    #ffffff 75%,
+    #707070 100%
+  );
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 0.75rem;
-  animation: slideInLeft 0.8s ease-out 0.2s both, rotateGradient 8s ease infinite;
+  
+  /* Sombra pequeña */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  
+  /* Animaciones */
+  animation: slideInLeft 0.8s ease-out 0.2s both, gentleShine 8s ease-in-out infinite;
+}
+
+@keyframes gentleShine {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 /* Subtítulo */
@@ -154,12 +196,12 @@
 }
 
 .hero-buttons .btn {
-  transition: all var(--transition-base);
+  transition: all 0.3s ease;
   position: relative;
 }
 
 .hero-buttons .btn-primary {
-  background: var(--gradient-primary);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
 
 .hero-buttons .btn-outline {
@@ -182,12 +224,12 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-backdrop);
-  border: 1px solid var(--glass-border);
+  background: var(--background-alt);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
   font-size: 1.5rem;
   color: var(--text-primary);
-  transition: all var(--transition-base);
+  transition: all 0.3s ease;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -201,7 +243,7 @@
   left: 50%;
   width: 0;
   height: 0;
-  background: var(--gradient-primary);
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
   border-radius: 50%;
   transform: translate(-50%, -50%);
   transition: width 0.6s ease, height 0.6s ease;
@@ -216,7 +258,7 @@
 .social-link:hover {
   color: white;
   transform: translateY(-8px);
-  box-shadow: var(--glow-lg);
+  box-shadow: 0 20px 40px rgba(12, 192, 236, 0.4);
   border-color: var(--primary-color);
 }
 
@@ -239,6 +281,15 @@
   animation: float 3s ease-in-out infinite;
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
 .profile-image {
   width: 100%;
   height: 100%;
@@ -248,7 +299,7 @@
   z-index: 1;
   border: 5px solid var(--background);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  transition: all var(--transition-base);
+  transition: all 0.3s ease;
   filter: brightness(1);
 }
 
@@ -265,10 +316,19 @@
   right: -10px;
   bottom: -10px;
   border-radius: 50%;
-  background: var(--gradient-primary);
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
   z-index: 0;
   animation: rotate360 20s linear infinite;
   opacity: 0.7;
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Efecto glow en la imagen */
@@ -284,6 +344,15 @@
   opacity: 0;
   animation: softPulse 3s ease-in-out infinite;
   z-index: -1;
+}
+
+@keyframes softPulse {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
 }
 
 .image-wrapper:hover::after {
@@ -306,7 +375,7 @@
   border: 2px solid var(--text-secondary);
   border-radius: 12px;
   position: relative;
-  transition: all var(--transition-base);
+  transition: all 0.3s ease;
 }
 
 .mouse:hover {
@@ -326,8 +395,54 @@
   animation: scroll 1.5s ease-in-out infinite;
 }
 
+@keyframes scroll {
+  0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(12px); }
+}
+
 .mouse:hover .wheel {
   background: var(--primary-color);
+}
+
+/* ===== ANIMACIONES ADICIONALES ===== */
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
 }
 
 /* ===== RESPONSIVE - TABLET ===== */
@@ -409,6 +524,7 @@
 
   .scroll-indicator {
     bottom: 1rem;
+    display: none;
   }
 
   .orb-1,
@@ -467,57 +583,12 @@
     height: 250px;
   }
 
-  .greeting {
-    font-size: 1rem;
-  }
-
   .wave {
     font-size: 1.5rem;
   }
 }
 
-/* ===== ANIMACIONES ADICIONALES ===== */
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-40px);
-    filter: blur(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-    filter: blur(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(40px);
-    filter: blur(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-    filter: blur(0);
-  }
-}
-
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-    filter: blur(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
-}
-
-/* Accesibilidad */
+/* ===== ACCESIBILIDAD ===== */
 .hero-name:focus-visible,
 .social-link:focus-visible,
 .hero-buttons .btn:focus-visible {

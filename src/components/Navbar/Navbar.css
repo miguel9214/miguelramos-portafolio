@@ -69,6 +69,22 @@
   transition: all var(--transition-base);
   position: relative;
   padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ===== ICONOS ===== */
+.navbar-icon {
+  font-size: 1.1rem;
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-text {
+  transition: all var(--transition-base);
 }
 
 /* Efecto underline mejorado */
@@ -82,7 +98,7 @@
   background: var(--gradient-primary);
   transition: width var(--transition-base);
   border-radius: 2px;
-  box-shadow: 0 0 10px rgba(12, 192, 236, 0.3);
+  box-shadow: 0 0 10px rgba(31, 111, 235, 0.3);
 }
 
 .navbar-link:hover::after {
@@ -92,6 +108,12 @@
 .navbar-link:hover {
   color: var(--primary-color);
   transform: translateY(-2px);
+}
+
+.navbar-link:hover .navbar-icon {
+  transform: translateY(-3px) scale(1.15);
+  color: var(--accent-color);
+  animation: bounce 0.6s ease;
 }
 
 /* ===== ACCIONES (Buttons) ===== */
@@ -210,6 +232,8 @@
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
     transition: all var(--transition-base);
+    flex-direction: row;
+    gap: 0.75rem;
   }
 
   .navbar-link::after {
@@ -219,6 +243,10 @@
   .navbar-link:hover {
     background: var(--background-alt);
     transform: translateX(10px);
+  }
+
+  .navbar-link:hover .navbar-icon {
+    transform: scale(1.2);
   }
 
   .navbar-actions {
@@ -253,6 +281,10 @@
 
   .navbar-link {
     font-size: 0.95rem;
+  }
+
+  .navbar-icon {
+    font-size: 1rem;
   }
 
   .navbar-logo {
@@ -290,15 +322,25 @@
 /* Efecto de pulso en hover del logo */
 @keyframes logoPulse {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(12, 192, 236, 0.4);
+    box-shadow: 0 0 0 0 rgba(31, 111, 235, 0.4);
   }
   50% {
-    box-shadow: 0 0 0 10px rgba(12, 192, 236, 0);
+    box-shadow: 0 0 0 10px rgba(31, 111, 235, 0);
   }
 }
 
 .navbar-logo:hover {
   animation: logoPulse 1.5s ease-out;
+}
+
+/* Animación bounce para iconos */
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1.15) translateY(0);
+  }
+  50% {
+    transform: scale(1.15) translateY(-4px);
+  }
 }
 
 /* Smooth scroll en links del menú */
@@ -320,7 +362,8 @@
   .navbar-menu,
   .navbar-link,
   .language-toggle,
-  .navbar-logo {
+  .navbar-logo,
+  .navbar-icon {
     animation: none;
     transition: none;
   }
