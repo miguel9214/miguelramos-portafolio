@@ -6,13 +6,13 @@
 
 :root {
   /* Colores primarios - Mantenidos */
-  --primary-color: #0cc0ec;
-  --secondary-color: #323080;
-  --accent-color: #f093fb;
+  --primary-color: #28b9e9;
+  --secondary-color: #0c7eb3;
+  --accent-color: #117aa3;
   --success-color: #10b981;
   --warning-color: #f59e0b;
   --danger-color: #ef4444;
-  --info-color: #3b82f6;
+  --info-color: #184ea5;
   
   /* Colores base - Mantenidos */
   --text-primary: #1f2937;
@@ -22,10 +22,10 @@
   --border-color: #e5e7eb;
   
   /* 🆕 Gradientes modernos */
-  --gradient-primary: linear-gradient(135deg, #0cc0ec, #f093fb);
-  --gradient-secondary: linear-gradient(135deg, #323080, #0cc0ec);
-  --gradient-tertiary: linear-gradient(135deg, #f093fb, #323080);
-  --gradient-neon: linear-gradient(90deg, #0cc0ec, #f093fb, #0cc0ec);
+  --gradient-primary: linear-gradient(135deg, #0cc0ec, #140e66);
+  --gradient-secondary: linear-gradient(135deg, #2a23f7, #0cc0ec);
+  --gradient-tertiary: linear-gradient(135deg, #212bbd, #323080);
+  --gradient-neon: linear-gradient(90deg, #0cc0ec, #081770, #0cc0ec);
   
   /* 🆕 Glassmorphism */
   --glass-bg: rgba(255, 255, 255, 0.7);
