@@ -5,6 +5,7 @@
 }
 
 :root {
+  /* Colores primarios - Mantenidos */
   --primary-color: #0cc0ec;
   --secondary-color: #323080;
   --accent-color: #f093fb;
@@ -13,21 +14,48 @@
   --danger-color: #ef4444;
   --info-color: #3b82f6;
   
+  /* Colores base - Mantenidos */
   --text-primary: #1f2937;
   --text-secondary: #6b7280;
   --background: #ffffff;
   --background-alt: #f9fafb;
   --border-color: #e5e7eb;
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  
+  /* 🆕 Gradientes modernos */
+  --gradient-primary: linear-gradient(135deg, #0cc0ec, #f093fb);
+  --gradient-secondary: linear-gradient(135deg, #323080, #0cc0ec);
+  --gradient-tertiary: linear-gradient(135deg, #f093fb, #323080);
+  --gradient-neon: linear-gradient(90deg, #0cc0ec, #f093fb, #0cc0ec);
+  
+  /* 🆕 Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-backdrop: blur(10px);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  
+  /* 🆕 Sombras mejoradas */
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 30px 80px rgba(0, 0, 0, 0.2);
+  --glow: 0 0 30px rgba(12, 192, 236, 0.3);
+  --glow-lg: 0 0 50px rgba(12, 192, 236, 0.4);
+  
+  /* 🆕 Transiciones suave */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Dark mode mejorado */
 [data-theme="dark"] {
   --text-primary: #f9fafb;
   --text-secondary: #d1d5db;
   --background: #111827;
   --background-alt: #1f2937;
   --border-color: #374151;
+  
+  /* 🆕 Dark mode glassmorphism */
+  --glass-bg: rgba(17, 24, 39, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 body {
@@ -40,6 +68,7 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  transition: background-color var(--transition-base), color var(--transition-base);
 }
 
 html {
@@ -69,5 +98,195 @@ section {
 @media (max-width: 768px) {
   section {
     padding: 3rem 0;
+  }
+}
+
+/* 🆕 KEYFRAMES MODERNOS */
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px rgba(12, 192, 236, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 40px rgba(240, 147, 251, 0.4));
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes rotateGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes softPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  10%, 30% {
+    transform: scale(1.1);
+  }
+  20%, 40% {
+    transform: scale(1);
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  10%, 30% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  40% {
+    transform: rotate(14deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(12px);
   }
 }
