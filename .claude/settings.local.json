@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install sharp --save-dev)",
+      "Bash(node convert-to-webp.js)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

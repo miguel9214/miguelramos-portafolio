@@ -4,10 +4,11 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  transition: all var(--transition-base);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   background: transparent;
   border-bottom: 1px solid transparent;
   padding: 1.25rem 2rem;
+  will-change: background, padding, box-shadow;
 }
 
 /* Estado scrolled - Glassmorphism activado */
@@ -15,8 +16,9 @@
   background: var(--glass-bg);
   backdrop-filter: var(--glass-backdrop);
   border-bottom: 1px solid var(--glass-border);
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   padding: 0.875rem 2rem;
+  transform: translateZ(0);
 }
 
 [data-theme="dark"] .navbar.scrolled {
@@ -66,12 +68,13 @@
 .navbar-link {
   font-weight: 500;
   color: var(--text-primary);
-  transition: all var(--transition-base);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   padding: 0.5rem 0;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  will-change: transform, color;
 }
 
 /* ===== ICONOS ===== */

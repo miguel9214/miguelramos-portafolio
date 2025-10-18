@@ -76,10 +76,12 @@ const Hero = () => {
 
         <div className="hero-image">
           <div className="image-wrapper float">
-            <img 
-              src="/images/profile.jpg" 
+            <img
+              src="/images/profile.webp"
               alt={name}
               className="profile-image"
+              fetchPriority="high"
+              decoding="async"
             />
             <div className="image-border"></div>
           </div>

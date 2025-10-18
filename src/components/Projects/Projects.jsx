@@ -16,7 +16,16 @@ const Projects = () => {
           {projects.map((project) => (
             <div key={project.id} className={`project-card ${project.featured ? 'featured' : ''}`}>
               <div className="project-image">
-                <img src={project.image} alt={project.title} />
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                  decoding="async"
+                  onLoad={(e) => {
+                    e.target.classList.add('loaded');
+                    e.target.parentElement.classList.add('image-loaded');
+                  }}
+                />
                 <div className="project-overlay">
                   <div className="project-links">
                     <a 
