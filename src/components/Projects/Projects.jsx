@@ -1,10 +1,38 @@
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { useLanguage } from '../../context/LanguageContext';
+import { useRef, useEffect } from 'react';
 import './Projects.css';
 
 const Projects = () => {
   const { t, data } = useLanguage();
   const { projects } = data;
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const delay = entry.target.dataset.index * 100;
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, delay);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        rootMargin: '100px',
+        threshold: 0.1
+      }
+    );
+
+    cardRefs.current.forEach((card) => {
+      if (card) observer.observe(card);
+    });
+
+    return () => observer.disconnect();
+  }, [projects]);
 
   return (
     <section id="projects" className="projects">
@@ -13,8 +41,13 @@ const Projects = () => {
         <p className="section-subtitle">{t.projects.subtitle}</p>
 
         <div className="projects-grid">
-          {projects.map((project) => (
-            <div key={project.id} className={`project-card ${project.featured ? 'featured' : ''}`}>
+          {projects.map((project, index) => (
+            <div
+              key={project.id}
+              className={`project-card ${project.featured ? 'featured' : ''}`}
+              data-index={index}
+              ref={(el) => (cardRefs.current[index] = el)}
+            >
               <div className="project-image">
                 <img
                   src={project.image}
