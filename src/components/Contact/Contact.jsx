@@ -68,9 +68,9 @@ const Contact = () => {
 
         <div className="contact-content">
           <div className="contact-info">
-            {contactInfo.map((info, index) => (
-              <a 
-                key={index} 
+            {contactInfo.map((info) => (
+              <a
+                key={info.title}
                 href={info.link}
                 className="contact-info-item"
                 target={info.link.startsWith('http') ? '_blank' : undefined}

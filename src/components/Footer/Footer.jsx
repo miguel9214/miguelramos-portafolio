@@ -24,10 +24,10 @@ const Footer = () => {
           </div>
 
           <div className="footer-social">
-            {socialLinks.map((link, index) => (   
+            {socialLinks.map((link) => (
               <a
-                key={index}         
-                href={link.url} 
+                key={link.label}
+                href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-social-link"

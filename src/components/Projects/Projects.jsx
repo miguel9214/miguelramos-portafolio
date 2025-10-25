@@ -1,21 +1,24 @@
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { useLanguage } from '../../context/LanguageContext';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import './Projects.css';
 
 const Projects = () => {
   const { t, data } = useLanguage();
   const { projects } = data;
   const cardRefs = useRef([]);
+  const [visibleCards, setVisibleCards] = useState(new Set());
+  const [loadedImages, setLoadedImages] = useState(new Set());
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const delay = entry.target.dataset.index * 100;
+            const index = parseInt(entry.target.dataset.index);
+            const delay = index * 100;
             setTimeout(() => {
-              entry.target.classList.add('visible');
+              setVisibleCards(prev => new Set([...prev, index]));
             }, delay);
             observer.unobserve(entry.target);
           }
@@ -34,6 +37,10 @@ const Projects = () => {
     return () => observer.disconnect();
   }, [projects]);
 
+  const handleImageLoad = (index) => {
+    setLoadedImages(prev => new Set([...prev, index]));
+  };
+
   return (
     <section id="projects" className="projects">
       <div className="container">
@@ -44,20 +51,18 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className={`project-card ${project.featured ? 'featured' : ''}`}
+              className={`project-card ${project.featured ? 'featured' : ''} ${visibleCards.has(index) ? 'visible' : ''}`}
               data-index={index}
               ref={(el) => (cardRefs.current[index] = el)}
             >
-              <div className="project-image">
+              <div className={`project-image ${loadedImages.has(index) ? 'image-loaded' : ''}`}>
                 <img
                   src={project.image}
                   alt={project.title}
                   loading="lazy"
                   decoding="async"
-                  onLoad={(e) => {
-                    e.target.classList.add('loaded');
-                    e.target.parentElement.classList.add('image-loaded');
-                  }}
+                  className={loadedImages.has(index) ? 'loaded' : ''}
+                  onLoad={() => handleImageLoad(index)}
                 />
                 <div className="project-overlay">
                   <div className="project-links">
@@ -90,8 +95,8 @@ const Projects = () => {
                 <div className="project-technologies">
                   <span className="tech-label">{t.projects.technologies}:</span>
                   <div className="tech-tags">
-                    {project.technologies.map((tech, index) => (
-                      <span key={index} className="tech-tag">{tech}</span>
+                    {project.technologies.map((tech) => (
+                      <span key={`${project.id}-${tech}`} className="tech-tag">{tech}</span>
                     ))}
                   </div>
                 </div>

@@ -12,12 +12,12 @@ const Skills = () => {
         <p className="section-subtitle">{t.skills.subtitle}</p>
 
         <div className="skills-grid">
-          {skills.map((skillGroup, index) => (
-            <div key={index} className="skill-category">
+          {skills.map((skillGroup) => (
+            <div key={skillGroup.category} className="skill-category">
               <h3 className="category-title">{skillGroup.category}</h3>
               <div className="skills-list">
-                {skillGroup.items.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="skill-item">
+                {skillGroup.items.map((skill) => (
+                  <div key={`${skillGroup.category}-${skill}`} className="skill-item">
                     <span className="skill-name">{skill}</span>
                   </div>
                 ))}

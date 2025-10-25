@@ -28,15 +28,16 @@
 .gradient-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.25;
+  filter: blur(40px);
+  opacity: 0.2;
   animation: float 8s ease-in-out infinite;
   mix-blend-mode: screen;
+  will-change: transform;
 }
 
 [data-theme="dark"] .gradient-orb {
   mix-blend-mode: overlay;
-  opacity: 0.2;
+  opacity: 0.15;
 }
 
 .orb-1 {

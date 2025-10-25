@@ -18,12 +18,28 @@ const Navbar = () => {
   const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
+    let timeoutId = null;
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      // Throttle scroll events to improve performance
+      if (timeoutId) return;
+
+      timeoutId = setTimeout(() => {
+        const currentScrollY = window.scrollY;
+        if ((lastScrollY <= 50 && currentScrollY > 50) || (lastScrollY > 50 && currentScrollY <= 50)) {
+          setIsScrolled(currentScrollY > 50);
+        }
+        lastScrollY = currentScrollY;
+        timeoutId = null;
+      }, 100);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const menuItems = [

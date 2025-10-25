@@ -374,4 +374,24 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
+  /* Desactivar efectos blur costosos */
+  .gradient-orb {
+    filter: none !important;
+    opacity: 0.05 !important;
+  }
+
+  /* Simplificar efectos de hover */
+  .social-link:hover,
+  .project-card:hover,
+  .btn:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Desactivar backdrop filters costosos */
+  .card,
+  .social-link {
+    backdrop-filter: none !important;
+  }
 }

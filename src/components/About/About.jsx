@@ -19,8 +19,8 @@ const About = () => {
             <div className="about-interests">
               <h3>{t.about.interests}</h3>
               <div className="interests-list">
-                {about.interests.map((interest, index) => (
-                  <span key={index} className="tag">
+                {about.interests.map((interest) => (
+                  <span key={interest} className="tag">
                     {interest}
                   </span>
                 ))}
@@ -34,8 +34,8 @@ const About = () => {
           </div>
 
           <div className="about-stats">
-            {stats.map((stat, index) => (
-              <div key={index} className="stat-card">
+            {stats.map((stat) => (
+              <div key={stat.label} className="stat-card">
                 <div className="stat-value">{stat.value}</div>
                 <div className="stat-label">{stat.label}</div>
               </div>

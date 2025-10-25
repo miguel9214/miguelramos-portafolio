@@ -13,8 +13,8 @@ const Experience = () => {
         <p className="section-subtitle">{t.experience.subtitle}</p>
 
         <div className="experience-timeline">
-          {experience.map((exp, index) => (
-            <div key={index} className="timeline-item">
+          {experience.map((exp) => (
+            <div key={`${exp.company}-${exp.position}`} className="timeline-item">
               <div className="timeline-marker"></div>
               <div className="timeline-content">
                 <div className="experience-header">
@@ -37,8 +37,8 @@ const Experience = () => {
                   <div className="achievements">
                     <h5>{t.experience.achievements}:</h5>
                     <ul>
-                      {exp.achievements.map((achievement, i) => (
-                        <li key={i}>{achievement}</li>
+                      {exp.achievements.map((achievement) => (
+                        <li key={`${exp.company}-${achievement.substring(0, 20)}`}>{achievement}</li>
                       ))}
                     </ul>
                   </div>

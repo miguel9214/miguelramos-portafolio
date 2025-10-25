@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(npm install sharp --save-dev)",
-      "Bash(node convert-to-webp.js)"
+      "Bash(node convert-to-webp.js)",
+      "Bash(find:*)",
+      "Bash(node optimize-images.js:*)",
+      "Bash(node replace-images.js)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []
