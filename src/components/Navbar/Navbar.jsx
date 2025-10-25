@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
-import { 
-  FaBars, 
-  FaTimes, 
-  FaHome, 
-  FaUser, 
-  FaCode, 
-  FaBriefcase, 
-  FaProjectDiagram, 
-  FaEnvelope 
+import { Link, useLocation } from 'react-router-dom';
+import {
+  FaBars,
+  FaTimes,
+  FaHome,
+  FaUser,
+  FaCode,
+  FaBriefcase,
+  FaProjectDiagram,
+  FaEnvelope
 } from 'react-icons/fa';
 import { useLanguage } from '../../context/LanguageContext';
 import './Navbar.css';
@@ -16,6 +17,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { language, toggleLanguage, t } = useLanguage();
+  const location = useLocation();
 
   useEffect(() => {
     let timeoutId = null;
@@ -43,12 +45,12 @@ const Navbar = () => {
   }, []);
 
   const menuItems = [
-    { name: t.nav.home, href: '#hero', icon: <FaHome /> },
-    { name: t.nav.about, href: '#about', icon: <FaUser /> },
-    { name: t.nav.skills, href: '#skills', icon: <FaCode /> },
-    { name: t.nav.experience, href: '#experience', icon: <FaBriefcase /> },
-    { name: t.nav.projects, href: '#projects', icon: <FaProjectDiagram /> },
-    { name: t.nav.contact, href: '#contact', icon: <FaEnvelope /> }
+    { name: t.nav.home, href: '/', icon: <FaHome /> },
+    { name: t.nav.about, href: '/about', icon: <FaUser /> },
+    { name: t.nav.skills, href: '/skills', icon: <FaCode /> },
+    { name: t.nav.experience, href: '/experience', icon: <FaBriefcase /> },
+    { name: t.nav.projects, href: '/projects', icon: <FaProjectDiagram /> },
+    { name: t.nav.contact, href: '/contact', icon: <FaEnvelope /> }
   ];
 
   const handleMenuClick = () => {
@@ -58,21 +60,21 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-content">
-        <a href="#hero" className="navbar-logo">
+        <Link to="/" className="navbar-logo">
           <span className="logo-text">Portfolio</span>
-        </a>
+        </Link>
 
         <ul className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>
           {menuItems.map((item) => (
             <li key={item.name}>
-              <a
-                href={item.href}
-                className="navbar-link"
+              <Link
+                to={item.href}
+                className={`navbar-link ${location.pathname === item.href ? 'active' : ''}`}
                 onClick={handleMenuClick}
               >
                 <span className="navbar-icon">{item.icon}</span>
                 <span className="navbar-text">{item.name}</span>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

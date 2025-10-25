@@ -1,28 +1,28 @@
 export const developerData = {
   es: {
     name: "Miguel Angel Ramos Lopez",
-    title: "Desarrollador Full Stack",
-    subtitle: "Especialista en Laravel & Vue.js, Node.js y React | Soluciones Web Modernas",
-    description: "Desarrollador Full Stack especializado en Laravel & Vue.js, Node.js y React con experiencia creando aplicaciones web modernas y escalables. Desde Aguachica, Cesar, desarrollo soluciones digitales para empresas locales y clientes internacionales.",
+    title: "Desarrollador Full-Stack",
+    subtitle: "React • Node.js • Laravel | Aplicaciones Web Escalables",
+    description: "Desarrollador Full-Stack especialista en React, Node.js y Laravel. Transformo ideas en aplicaciones web escalables y eficientes. Construyo soluciones web de alto rendimiento que resuelven problemas reales.",
     email: "miguelangelramosdev@gmail.com",
     phone: "+57 3178519427",
     location: "Aguachica, Cesar, Colombia",
-    
+
     social: {
       github: "https://github.com/miguelramos",
-      linkedin: "https://linkedin.com/in/miguel-ramos-lopez",
+      linkedin: "https://www.linkedin.com/in/miguel-angel-ramos-lopez",
       twitter: "https://twitter.com/miguelramos",
       whatsapp: "https://wa.me/573178519427"
     },
-    
+
     about: {
-      description: "Soy un desarrollador Full Stack apasionado por crear soluciones tecnológicas innovadoras que generen impacto real. Desde Aguachica, Cesar, he ayudado a empresas locales y regionales a digitalizarse y expandir su presencia online. Con sólida experiencia en Laravel y Vue.js, me especializo en crear aplicaciones web robustas, escalables y de alto rendimiento que resuelven problemas reales del negocio.",
-      mission: "Mi misión es democratizar el acceso a la tecnología, especialmente para empresas pequeñas y medianas de mi región y Colombia. Creo firmemente que la transformación digital puede impulsar el crecimiento económico local, y trabajo cada día para hacer que las soluciones tecnológicas sean accesibles y efectivas para todos.",
-      interests: ["Desarrollo Web", "Laravel & Vue.js", "Inteligencia Artificial", "Open Source"]
+      description: "Construyo soluciones web de alto rendimiento que resuelven problemas reales. Mi stack principal combina la potencia de React y Node.js con la robustez de Laravel, lo que me permite crear aplicaciones full-stack desde cero hasta producción. Mi enfoque combina código limpio, mejores prácticas y una constante evolución técnica.",
+      mission: "No solo escribo código que funciona, escribo código que otros desarrolladores pueden mantener y escalar. Me especializo en desarrollo de aplicaciones web escalables, arquitecturas backend eficientes con APIs RESTful y GraphQL, y optimización de rendimiento y experiencia de usuario.",
+      interests: ["Desarrollo Web", "React & Node.js", "APIs RESTful", "Clean Code"]
     },
-    
+
     stats: [
-      { value: "4+", label: "Años Experiencia" },
+      { value: "5+", label: "Años Experiencia" },
       { value: "30+", label: "Proyectos Completados" },
       { value: "20+", label: "Clientes Satisfechos" },
       { value: "100%", label: "Compromiso" }
@@ -30,42 +30,45 @@ export const developerData = {
     
     skills: [
       {
-        category: "Backend",
-        items: ["Laravel", "PHP", "Node.js", "MySQL", "REST APIs", "Git"]
+        category: "Frontend",
+        items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "HTML5/CSS3"]
       },
       {
-        category: "Frontend",
-        items: ["Vue.js", "React", "JavaScript", "HTML5", "CSS3", "Bootstrap"]
+        category: "Backend",
+        items: ["Node.js", "Laravel", "Express", "MySQL", "PostgreSQL", "GraphQL"]
       },
       {
         category: "Herramientas",
-        items: ["VS Code", "Docker", "Linux", "AWS", "Postman", "Figma"]
+        items: ["Git", "Docker", "AWS", "CI/CD", "Postman", "VS Code"]
       }
     ],
     
     experience: [
       {
-        company: "Freelance - Clientes Diversos",
-        position: "Full Stack Developer Freelance",
-        period: "2022 - Presente",
-        location: "Aguachica, Cesar - Remoto",
-        description: "Desarrollo aplicaciones web completas para clientes locales e internacionales, especializándome en Laravel para backend y Vue.js para frontend. Trabajo de forma remota desde Aguachica atendiendo clientes de toda Colombia y Latinoamérica.",
+        company: "MYDATA Sync.",
+        position: "Desarrollador Full Stack (React y Node)",
+        period: "Febrero 2020 - Septiembre 2025",
+        location: "Colombia",
+        description: "Lideré el diseño e implementación de soluciones web utilizando React y Node.js. Desarrollé y mantuve aplicaciones web, asegurando un rendimiento óptimo y una experiencia de usuario fluida.",
         achievements: [
-          "Desarrollé 15+ aplicaciones web exitosas para diversos clientes",
-          "Implementé sistemas de gestión empresarial que mejoraron eficiencia en 40%",
-          "Mantuve 100% de satisfacción del cliente según testimonios"
+          "Desarrollé y mantuve aplicaciones web con React y Node.js",
+          "Trabajé en colaboración con equipos multidisciplinarios para traducir requisitos del cliente en funcionalidades técnicas",
+          "Creé bases de datos sólidas y diseñé APIs para mejorar la interoperabilidad de las aplicaciones",
+          "Optimicé la seguridad y el rendimiento de las aplicaciones",
+          "Participé activamente en el mantenimiento y mejora continua de productos existentes"
         ]
       },
       {
-        company: "Proyectos Locales - Aguachica",
-        position: "Desarrollador Web",
-        period: "2021 - 2022",
-        location: "Aguachica, Cesar",
-        description: "Trabajé con empresas y comerciantes locales de Aguachica y la región desarrollando soluciones web que les permitieran modernizar sus procesos y expandir su presencia digital.",
+        company: "DR Tecnología",
+        position: "Desarrollador Back-end PHP",
+        period: "Febrero 2019 - Enero 2020",
+        location: "Colombia",
+        description: "Identifiqué y solucioné eficientemente problemas técnicos para garantizar un funcionamiento sin problemas de las aplicaciones. Optimicé la seguridad y el rendimiento.",
         achievements: [
-          "Ayudé a 10+ empresas locales a digitalizarse",
-          "Desarrollé sistema de inventario que redujo errores en 60%",
-          "Establecí presencia como desarrollador confiable en Aguachica"
+          "Identifiqué y solucioné problemas técnicos de forma eficiente",
+          "Optimicé seguridad y rendimiento de aplicaciones PHP",
+          "Mantuve conocimientos actualizados siguiendo tendencias en desarrollo web",
+          "Contribuí al éxito de proyectos cumpliendo estándares de calidad"
         ]
       }
     ],
@@ -115,71 +118,74 @@ export const developerData = {
   },
   en: {
     name: "Miguel Angel Ramos Lopez",
-    title: "Full Stack Developer",
-    subtitle: "Specialist in Laravel & Vue.js, Node.js and React | Modern Web Solutions",
-    description: "Full Stack Developer specialized in Laravel & Vue.js, Node.js and React with experience creating modern and scalable web applications. From Aguachica, Cesar, I develop digital solutions for local companies and international clients.",
+    title: "Full-Stack Developer",
+    subtitle: "React • Node.js • Laravel | Scalable Web Applications",
+    description: "Full-Stack Developer specialist in React, Node.js and Laravel. I transform ideas into scalable and efficient web applications. I build high-performance web solutions that solve real problems.",
     email: "miguelangelramosdev@gmail.com",
     phone: "+57 3178519427",
     location: "Aguachica, Cesar, Colombia",
-    
+
     social: {
       github: "https://github.com/miguelramos",
-      linkedin: "https://linkedin.com/in/miguel-ramos-lopez",
+      linkedin: "https://www.linkedin.com/in/miguel-angel-ramos-lopez",
       twitter: "https://twitter.com/miguelramos",
       whatsapp: "https://wa.me/573178519427"
     },
-    
+
     about: {
-      description: "I'm a Full Stack developer passionate about creating innovative technological solutions that generate real impact. From Aguachica, Cesar, I've helped local and regional companies to digitalize and expand their online presence. With solid experience in Laravel and Vue.js, I specialize in creating robust, scalable and high-performance web applications that solve real business problems.",
-      mission: "My mission is to democratize access to technology, especially for small and medium-sized companies in my region and Colombia. I firmly believe that digital transformation can drive local economic growth, and I work every day to make technological solutions accessible and effective for everyone.",
-      interests: ["Web Development", "Laravel & Vue.js", "Artificial Intelligence", "Open Source"]
+      description: "I build high-performance web solutions that solve real problems. My main stack combines the power of React and Node.js with the robustness of Laravel, allowing me to create full-stack applications from scratch to production. My approach combines clean code, best practices, and constant technical evolution.",
+      mission: "I don't just write code that works, I write code that other developers can maintain and scale. I specialize in scalable web application development, efficient backend architectures with RESTful and GraphQL APIs, and performance and user experience optimization.",
+      interests: ["Web Development", "React & Node.js", "RESTful APIs", "Clean Code"]
     },
-    
+
     stats: [
-      { value: "4+", label: "Years Experience" },
-      { value: "30+", label: "Projects Completed" },
+      { value: "5+", label: "Years Experience" },
+      { value: "30+", label: "Completed Projects" },
       { value: "20+", label: "Satisfied Clients" },
       { value: "100%", label: "Commitment" }
     ],
-    
+
     skills: [
       {
-        category: "Backend",
-        items: ["Laravel", "PHP", "Node.js", "MySQL", "REST APIs", "Git"]
+        category: "Frontend",
+        items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "HTML5/CSS3"]
       },
       {
-        category: "Frontend",
-        items: ["Vue.js", "React", "JavaScript", "HTML5", "CSS3", "Bootstrap"]
+        category: "Backend",
+        items: ["Node.js", "Laravel", "Express", "MySQL", "PostgreSQL", "GraphQL"]
       },
       {
         category: "Tools",
-        items: ["VS Code", "Docker", "Linux", "AWS", "Postman", "Figma"]
+        items: ["Git", "Docker", "AWS", "CI/CD", "Postman", "VS Code"]
       }
     ],
-    
+
     experience: [
       {
-        company: "Freelance - Diverse Clients",
-        position: "Freelance Full Stack Developer",
-        period: "2022 - Present",
-        location: "Aguachica, Cesar - Remote",
-        description: "I develop complete web applications for local and international clients, specializing in Laravel for backend and Vue.js for frontend. I work remotely from Aguachica serving clients throughout Colombia and Latin America.",
+        company: "MYDATA Sync.",
+        position: "Full Stack Developer (React and Node)",
+        period: "February 2020 - September 2025",
+        location: "Colombia",
+        description: "Led the design and implementation of web solutions using React and Node.js. Developed and maintained web applications, ensuring optimal performance and a smooth user experience.",
         achievements: [
-          "Developed 15+ successful web applications for diverse clients",
-          "Implemented business management systems that improved efficiency by 40%",
-          "Maintained 100% client satisfaction according to testimonials"
+          "Developed and maintained web applications with React and Node.js",
+          "Worked in collaboration with multidisciplinary teams to translate client requirements into technical functionalities",
+          "Created solid databases and designed APIs to improve application interoperability",
+          "Optimized application security and performance",
+          "Actively participated in the maintenance and continuous improvement of existing products"
         ]
       },
       {
-        company: "Local Projects - Aguachica",
-        position: "Web Developer",
-        period: "2021 - 2022",
-        location: "Aguachica, Cesar",
-        description: "I worked with local businesses and merchants in Aguachica and the region developing web solutions that allowed them to modernize their processes and expand their digital presence.",
+        company: "DR Tecnología",
+        position: "Back-end PHP Developer",
+        period: "February 2019 - January 2020",
+        location: "Colombia",
+        description: "Efficiently identified and solved technical problems to ensure smooth application operation. Optimized security and performance.",
         achievements: [
-          "Helped 10+ local businesses to digitalize",
-          "Developed inventory system that reduced errors by 60%",
-          "Established presence as a reliable developer in Aguachica"
+          "Efficiently identified and solved technical problems",
+          "Optimized security and performance of PHP applications",
+          "Kept knowledge updated following trends in web development",
+          "Contributed to project success meeting quality standards"
         ]
       }
     ],

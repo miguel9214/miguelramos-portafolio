@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { FaGithub, FaLinkedin, FaTwitter, FaWhatsapp } from 'react-icons/fa';
 import { HiDownload } from 'react-icons/hi';
 import { useLanguage } from '../../context/LanguageContext';
@@ -26,10 +27,10 @@ const Hero = () => {
           <p className="hero-description fade-in-up">{description}</p>
 
           <div className="hero-buttons fade-in-up">
-            <a href="#contact" className="btn btn-primary">
+            <Link to="/contact" className="btn btn-primary">
               {t.hero.contact}
-            </a>
-            <a href="/cv-miguel-ramos.pdf" download className="btn btn-outline">
+            </Link>
+            <a href="/cv-miguel-angel-ramos.pdf" download className="btn btn-outline">
               <HiDownload /> {t.hero.downloadCV}
             </a>
           </div>

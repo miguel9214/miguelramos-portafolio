@@ -6,7 +6,9 @@
       "Bash(find:*)",
       "Bash(node optimize-images.js:*)",
       "Bash(node replace-images.js)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(npm install:*)",
+      "Bash(node scripts/generate-cv.js:*)"
     ],
     "deny": [],
     "ask": []
